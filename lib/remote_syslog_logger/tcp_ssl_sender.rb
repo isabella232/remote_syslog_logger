@@ -12,9 +12,7 @@ module RemoteSyslogLogger
       ssl_context.ssl_version = :TLSv1_2
 
       @socket = OpenSSL::SSL::SSLSocket.new(@socket, ssl_context)
-      p 'connect'
       @socket.connect
-      p 'connect done'
     end
   end
 end

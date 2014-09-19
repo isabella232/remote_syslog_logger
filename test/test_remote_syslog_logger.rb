@@ -43,9 +43,7 @@ class TestRemoteSyslogLogger < Test::Unit::TestCase
 
   def test_tcp_ssl_logger
     setup_tcp_listener_ssl
-            p 'test'
     test_logging_single_line syslog_logger_of_type(:tcp_ssl, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE)
-    p 'done'
   end
 
   def test_tcp_ssl_logger_multiline
