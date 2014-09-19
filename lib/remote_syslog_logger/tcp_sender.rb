@@ -1,16 +1,15 @@
-require 'socket'
-require 'syslog_protocol'
 require 'remote_syslog_logger/syslog_sender'
+require 'socket'
 
 module RemoteSyslogLogger
-  class UdpSender < SyslogSender
+  class TcpSender < SyslogSender
     def initialize(remote_hostname, remote_port, options = {})
       super(remote_hostname, remote_port, options)
-      @socket = UDPSocket.new
+      @socket = TCPSocket.open(remote_hostname, remote_port)
     end
 
     def send_message(content)
-      @socket.send(content, 0, @remote_hostname, @remote_port)
+      @socket.puts content
     end
 
     def close

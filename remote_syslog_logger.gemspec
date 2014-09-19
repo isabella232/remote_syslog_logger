@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   ## the sub! line in the Rakefile
   s.name              = 'remote_syslog_logger'
   s.version           = '1.0.3'
-  s.date              = '2011-06-06'
+  s.date              = '2014-09-18'
   # s.rubyforge_project = 'remote_syslog_logger'
 
   ## Make sure your summary is short. The description may be as long
@@ -64,9 +64,14 @@ Gem::Specification.new do |s|
     README.md
     Rakefile
     lib/remote_syslog_logger.rb
+    lib/remote_syslog_logger/syslog_sender.rb
+    lib/remote_syslog_logger/tcp_sender.rb
+    lib/remote_syslog_logger/tcp_ssl_sender.rb
     lib/remote_syslog_logger/udp_sender.rb
     remote_syslog_logger.gemspec
     test/helper.rb
+    test/test.crt
+    test/test.key
     test/test_remote_syslog_logger.rb
   ]
   # = MANIFEST =
